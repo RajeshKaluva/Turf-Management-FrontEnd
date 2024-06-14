@@ -1,0 +1,83 @@
+body {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/025/501/407/non_2x/sports-equipment-on-a-black-background-sport-concept-copy-space-sports-equipment-on-a-dark-background-ai-generated-free-photo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+.booking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+ 
+  header {
+    background-color: #404a42;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+ 
+  .booking-table-container {
+    margin-bottom: 2rem;
+  }
+ 
+  .booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: gold;
+    font-weight: bold;
+  }
+ 
+  .booking-table th,
+  .booking-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e6e6e6;
+  }
+ 
+  .booking-table th {
+    background-color: black;
+    font-weight: bold;
+    color: whitesmoke;
+  }
+ 
+  .no-booking-message {
+    text-align: center;
+    color: #6c757d;
+    padding: 2rem;
+  }
+ 
+  .empty-cart-image {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+ 
+  .edit-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+ 
+  .edit-form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3)
+  }

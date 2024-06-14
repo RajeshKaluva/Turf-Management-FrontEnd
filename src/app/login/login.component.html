@@ -1,0 +1,29 @@
+
+  <section class="login-container">
+      <div class="image-container">
+
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="" style="user-select: auto;">
+            <source src="assets\dhoniproject.mp4" type="video/mp4" style="user-select: auto;">
+          </video>
+      </div>
+      
+      <div  class="login-form">
+          <h1>Login</h1>
+          <form #loginForm="ngForm" (ngSubmit)="submitForm(loginForm)" id="login-form">
+              <div class="input-container">
+                  <input type="email" id="email" [(ngModel)]="email" ngModel name="un2" #un2="ngModel" required placeholder="Email"/>
+              </div>
+              <p *ngIf="un2.touched&&un2.errors?.['required']" style="color:red">*email required</p>
+              <div class="input-container">
+                  <input type="password" id="password" [(ngModel)]="password"  ngModel name="un3" #un3="ngModel"required placeholder="Password"/>
+              </div>
+              <p *ngIf="un3.touched&&un3.errors?.['required']" style="color: red;">*password required</p>
+              <button [disabled]="false" (click)="login()" >Login</button>
+              <div class="options">
+                  <a href="#" [routerLink]="['/registration']" class="register-link">Register here</a>
+              </div>
+          </form>
+      </div>
+  </section>
+
+

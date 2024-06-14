@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container">
+    <form action="#" *ngIf="!bookingStatus">
+      <h2>Book a Sport</h2>
+      
+      <div class="form-group">
+        <label for="sportId">Sport ID:</label>
+        <input type="text" id="sportId" name="sportId" [(ngModel)]="sport" required>
+      </div>
+      <div class="form-group">
+        <label for="members">Number of Members:</label>
+        <input type="number" id="members" name="members" [(ngModel)]="members" min="1" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Booking Date:</label>
+        <input type="date" id="date" name="date" [(ngModel)]="bookingTime" required>
+      </div>
+     
+      <button type="submit" (click)="saveBooking()">Book Now</button>
+    </form>
+
+    
+    <div *ngIf="bookingStatus">
+      <h2>{{ bookingStatus }}</h2>
+      <div>
+        <label for="sportId">Sport ID:</label>
+        <input type="text" id="sportId" name="sportId" [(ngModel)]="sport.id" disabled>
+      </div>
+      <div>
+        <label for="members">Number of Members:</label>
+        <input type="number" id="members" name="members" [(ngModel)]="members" disabled>
+      </div>
+      <div>
+        <label for="date">Booking Date:</label>
+        <input type="date" id="date" name="date" [(ngModel)]="bookingTime" disabled>
+      </div>
+      <br>
+      <button style="background-color: black;align-items: center;color: aliceblue;"    (click)="resetForm() ">Book Another</button>
+    </div>
+  </div>
+  

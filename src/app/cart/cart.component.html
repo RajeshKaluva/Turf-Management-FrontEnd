@@ -1,0 +1,67 @@
+<body>
+  <app-header></app-header>
+  <div class="booking-container">
+    <header>
+      <h2>Your Bookings</h2>
+    </header>
+ 
+    <div *ngIf="searchPerformed && bookings?.length > 0" class="booking-table-container">
+      <table class="booking-table">
+        <thead>
+          <tr>
+            <th>Sport</th>
+            <th>Amount</th>
+            <th>Members</th>
+            <th>Booking Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookings">
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.amount |currency:'INR'}}</td>
+            <td>{{ booking.members }}</td>
+            <td>{{ booking.bookingTime | date:'yyyy-MM-dd' }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="updateBooking(booking)">Edit</button>
+              <button class="btn btn-danger" (click)="cancelBooking(booking)">Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+ 
+    <div *ngIf="!searchPerformed || bookings?.length === 0" class="no-booking-message">
+      <img src="https://www.shutterstock.com/shutterstock/photos/1617887866/display_1500/stock-vector-no-orders-concept-with-character-can-use-for-web-banner-mobile-app-hero-images-flat-vector-1617887866.jpg" alt="No Bookings" class="empty-cart-image">
+      <p>No bookings found</p>
+    </div>
+ 
+    <div *ngIf="showEditForm" class="edit-form-overlay">
+      <div class="edit-form-container">
+        <h2>Edit Booking</h2>
+        <form (ngSubmit)="saveUpdatedBooking()">
+          <div class="form-group">
+            <label for="sport">Sport:</label>
+            <input type="text" class="form-control" id="sport" [(ngModel)]="editingBooking.name" name="sport" disabled>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" class="form-control" id="amount" [(ngModel)]="editingBooking.amount" name="amount" disabled>
+          </div>
+          <div class="form-group">
+            <label for="members">Members:</label>
+            <input type="number" class="form-control" id="members" [(ngModel)]="members" name="members">
+          </div>
+          <div class="form-group">
+            <label for="bookingTime">Booking Date:</label>
+            <input type="date" class="form-control" id="bookingTime" [(ngModel)]="bookingTime" name="bookingTime">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Update Booking</button>
+            <button type="button" class="btn btn-secondary" (click)="closeEditForm()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="table-container">
+  <div class="table-wrapper">
+    <h2>Available Sports</h2>
+    <table class="centered-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Sport</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of sports">
+          <td>{{ s.id }}</td>
+          <td>{{ s.name }}</td>
+          <td>{{ s.price |currency:'INR'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+    <header>
+      <div class="ccontainer">
+        <img src="assets\headerlogo.jpg" alt="Rajesh" class="logo">
+        <nav>
+          <a routerLinkActive="active" routerLink="/admin">back</a>
+        </nav>
+      </div>
+    </header>
+<h1>User Details</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <!-- <th>Password</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address }}</td>
+    <!--  <td>{{ user.password }}</td>  -->
+    </tr>
+  </tbody>
+</table>
